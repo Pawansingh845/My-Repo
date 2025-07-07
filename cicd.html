@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CI/CD with Jenkins – TechZone</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0f2027;
+      color: white;
+      padding: 20px;
+    }
+    h1, h2 {
+      color: #00d8ff;
+    }
+    a {
+      color: #00d8ff;
+      text-decoration: none;
+    }
+    code {
+      background-color: #1a1a1a;
+      padding: 4px 8px;
+      border-radius: 5px;
+      color: #00ffea;
+    }
+    pre {
+      background-color: #1a1a1a;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+      line-height: 1.6;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🚀 CI/CD with Jenkins</h1>
+    <a href="index.html">⬅ Back to Home</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>⚙️ What is CI/CD?</h2>
+      <p><strong>CI (Continuous Integration)</strong> is the practice of frequently merging code to a central repository and automatically testing it. <br>
+      <strong>CD (Continuous Delivery/Deployment)</strong> is the practice of deploying code automatically to staging or production after passing all tests.</p>
+    </section>
+
+    <section>
+      <h2>🧰 What is Jenkins?</h2>
+      <p>Jenkins is an open-source automation server used to build, test, and deploy applications. It helps implement CI/CD pipelines efficiently.</p>
+      <ul>
+        <li>Supports plugins for Git, Docker, Kubernetes, etc.</li>
+        <li>Can trigger jobs via Git commits, webhooks, or schedules</li>
+        <li>Supports scripted and declarative pipelines</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📄 Sample Jenkins Declarative Pipeline</h2>
+      <pre><code>
+pipeline {
+  agent any
+
+  stages {
+    stage('Clone') {
+      steps {
+        git 'https://github.com/user/project.git'
+      }
+    }
+
+    stage('Build') {
+      steps {
+        sh 'npm install'
+      }
+    }
+
+    stage('Test') {
+      steps {
+        sh 'npm test'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        sh 'echo Deploying to production...'
+      }
+    }
+  }
+}
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>🧠 CI/CD Interview Questions</h2>
+      <ul>
+        <li>What is the difference between Continuous Delivery and Continuous Deployment?</li>
+        <li>How does Jenkins pipeline work?</li>
+        <li>What are post actions in Jenkins?</li>
+        <li>How do you manage secrets in a Jenkins pipeline?</li>
+        <li>How do you trigger builds automatically on code changes?</li>
+      </ul>
+    </section>
+  </main>
+</body>
+</html>
