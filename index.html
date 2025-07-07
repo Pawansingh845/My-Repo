@@ -1,138 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TechZone - DevOps & Cloud</title>
-  <link rel="stylesheet" href="styles.css" />
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0f2027;
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-    }
+<header>
+  <h1>TechZone 🔧</h1>
+  <p>DevOps | Cloud | Docker | Terraform | CI/CD</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: linear-gradient(to right, #00d8ff, #0072ff);
-      color: black;
-    }
+<style>
+  header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: linear-gradient(to right, #FF9933, #ffffff, #138808); /* Tiranga: Orange, White, Green */
+    color: black;
+  }
 
-    nav {
-      margin-top: 1rem;
-    }
+  nav a {
+    margin: 0 1rem;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+  }
 
-    nav a {
-      margin: 0 1rem;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-    }
+  .btn {
+    background-color: #ffffff;
+    color: #000;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid #00d8ff;
+    text-decoration: none;
+  }
 
-    section {
-      padding: 2rem;
-      text-align: center;
-    }
+  .card {
+    background-color: #1c1c2b;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    transition: transform 0.2s ease;
+  }
 
-    .btn {
-      display: inline-block;
-      padding: 10px 20px;
-      margin-top: 1rem;
-      background-color: #00d8ff;
-      color: black;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-    }
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+  }
 
-    .grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-
-    .card-link {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .card {
-      background-color: #1c1c2b;
-      border-radius: 12px;
-      padding: 1.5rem;
-      width: 280px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-    }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      background-color: #121218;
-      color: #888;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>TechZone 🔧</h1>
-    <p>DevOps | Cloud | Docker | Terraform | CI/CD</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <section>
-    <h2>📝 Interview Questions</h2>
-    <p>Explore technical + HR questions from real interviews:</p>
-    <a class="btn" href="Interview-Que.html">View Questions</a>
-  </section>
-
-  <main class="grid">
-
-    <a href="docker.html" class="card-link">
-      <div class="card">
-        <h3>🐳 Docker Zone</h3>
-        <p>Explore Docker concepts, commands, interview questions, and real-world use-cases.</p>
-      </div>
-    </a>
-
-    <a href="terraform.html" class="card-link">
-      <div class="card">
-        <h3>⚙️ Terraform + Azure</h3>
-        <p>Deploy full infrastructure as code using Terraform with Azure.</p>
-      </div>
-    </a>
-
-    <a href="cicd.html" class="card-link">
-      <div class="card">
-        <h3>🚀 CI/CD with Jenkins</h3>
-        <p>Automate deployments, testing, and rollbacks like a pro.</p>
-      </div>
-    </a>
-
-    <a href="monitoring.html" class="card-link">
-      <div class="card">
-        <h3>📊 Monitoring with Grafana</h3>
-        <p>Visualize logs and metrics using Loki, Prometheus & Grafana.</p>
-      </div>
-    </a>
-
-  </main>
-
-  <footer>
-    <p>© 2025 TechZone | Built by Pawan Singh</p>
-  </footer>
-</body>
-</html>
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+</style>
