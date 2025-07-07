@@ -69,3 +69,18 @@ footer {
   color: #aaa;
 }
 
+section h3 {
+  margin-top: 2rem;
+  color: #00d8ff;
+}
+
+ul {
+  list-style: disc;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
