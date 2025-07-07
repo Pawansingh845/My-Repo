@@ -48,4 +48,91 @@
       border-radius: 5px;
     }
 
-    .g
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      padding: 2rem;
+    }
+
+    .card-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .card {
+      background-color: #1c1c2b;
+      border-radius: 12px;
+      padding: 1.5rem;
+      width: 280px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #121218;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TechZone 🔧</h1>
+    <p>DevOps | Cloud | Docker | Terraform | CI/CD</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>📝 Interview Questions</h2>
+    <p>Explore technical + HR questions from real interviews:</p>
+    <a class="btn" href="Interview-Que.html">View Questions</a>
+  </section>
+
+  <main class="grid">
+
+    <a href="docker.html" class="card-link">
+      <div class="card">
+        <h3>🐳 Docker Zone</h3>
+        <p>Explore Docker concepts, commands, interview questions, and real-world use-cases.</p>
+      </div>
+    </a>
+
+    <a href="terraform.html" class="card-link">
+      <div class="card">
+        <h3>⚙️ Terraform + Azure</h3>
+        <p>Deploy full infrastructure as code using Terraform with Azure.</p>
+      </div>
+    </a>
+
+    <a href="cicd.html" class="card-link">
+      <div class="card">
+        <h3>🚀 CI/CD with Jenkins</h3>
+        <p>Automate deployments, testing, and rollbacks like a pro.</p>
+      </div>
+    </a>
+
+    <a href="monitoring.html" class="card-link">
+      <div class="card">
+        <h3>📊 Monitoring with Grafana</h3>
+        <p>Visualize logs and metrics using Loki, Prometheus & Grafana.</p>
+      </div>
+    </a>
+
+  </main>
+
+  <footer>
+    <p>© 2025 TechZone | Built by Pawan Singh</p>
+  </footer>
+</body>
+</html>
