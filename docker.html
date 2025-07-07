@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Docker Knowledge Zone – TechZone</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #0f2027; color: white; padding: 20px; }
+    a { color: #00d8ff; text-decoration: none; }
+    h1, h2 { color: #00d8ff; }
+    code { background-color: #1a1a1a; padding: 3px 6px; border-radius: 5px; color: #00eaff; }
+    ul { list-style: disc; padding-left: 20px; }
+    section { margin-bottom: 2rem; }
+    header { margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐳 Docker Knowledge Zone</h1>
+    <a href="index.html">⬅ Back to Home</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>🚀 What is Docker?</h2>
+      <p>Docker is a platform that allows developers to package applications and their dependencies into lightweight, portable containers.</p>
+    </section>
+
+    <section>
+      <h2>🧱 Basic Docker Concepts</h2>
+      <ul>
+        <li><strong>Docker Image:</strong> Read-only template used to create containers.</li>
+        <li><strong>Docker Container:</strong> Running instance of an image.</li>
+        <li><strong>Dockerfile:</strong> Script that contains instructions to build a Docker image.</li>
+        <li><strong>Docker Hub:</strong> Cloud-based registry for Docker images.</li>
+        <li><strong>Volume:</strong> Persistent storage mechanism for Docker containers.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📦 Common Docker Commands</h2>
+      <ul>
+        <li><code>docker ps</code> – List running containers</li>
+        <li><code>docker images</code> – Show available images</li>
+        <li><code>docker build -t myapp .</code> – Build Docker image from Dockerfile</li>
+        <li><code>docker run -d -p 8080:80 myapp</code> – Run container from image</li>
+        <li><code>docker exec -it container bash</code> – Access running container shell</li>
+        <li><code>docker logs container</code> – View container logs</li>
+        <li><code>docker stop/start/restart container</code> – Manage container lifecycle</li>
+        <li><code>docker rm container</code> – Remove container</li>
+        <li><code>docker rmi image</code> – Remove image</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🔧 Real-World DevOps Use Cases</h2>
+      <ul>
+        <li>Run Nginx/Apache as web servers inside containers</li>
+        <li>Deploy microservices architecture</li>
+        <li>Set up ELK stack (Elasticsearch, Logstash, Kibana)</li>
+        <li>Monitor apps using Prometheus + Grafana containers</li>
+        <li>Automated build/test/deploy pipeline using Jenkins in Docker</li>
+        <li>Run databases like MySQL, MongoDB in isolated containers</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>💡 Docker Interview Questions</h2>
+      <ul>
+        <li>What is the difference between a container and a virtual machine?</li>
+        <li>How do you persist data in a Docker container?</li>
+        <li>What is the purpose of Dockerfile?</li>
+        <li>How does Docker networking work?</li>
+        <li>What are bind mounts and volumes?</li>
+        <li>How do you handle secrets inside Docker?</li>
+        <li>How to connect multiple containers together?</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📁 Sample Dockerfile</h2>
+      <pre><code>
+FROM nginx:alpine
+COPY . /usr/share/nginx/html
+      </code></pre>
+      <p>This Dockerfile copies your static site into Nginx to serve via container.</p>
+    </section>
+  </main>
+</body>
+</html>
