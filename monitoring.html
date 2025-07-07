@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Monitoring with Prometheus, Loki, Grafana – TechZone</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    body { font-family: Arial, sans-serif; background: #0f2027; color: white; padding: 20px; }
+    a { color: #00d8ff; text-decoration: none; }
+    h1, h2 { color: #00d8ff; }
+    code { background-color: #1a1a1a; padding: 3px 6px; border-radius: 5px; color: #00eaff; }
+    ul { list-style: disc; padding-left: 20px; }
+    section { margin-bottom: 2rem; }
+    header { margin-bottom: 30px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📈 Monitoring with Prometheus, Loki & Grafana</h1>
+    <a href="index.html">⬅ Back to Home</a>
+  </header>
+
+  <main>
+    <section>
+      <h2>📊 What is Prometheus?</h2>
+      <p>Prometheus is an open-source monitoring tool designed for reliability and scalability. It collects metrics from configured targets at given intervals, evaluates rule expressions, displays results, and can trigger alerts if conditions are true.</p>
+      <ul>
+        <li>Time-series data model with key-value pairs</li>
+        <li>Powerful query language: PromQL</li>
+        <li>Integrated alerting system</li>
+        <li>Supports exporters (node-exporter, blackbox, etc.)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>📄 Sample Prometheus Config</h2>
+      <pre><code>
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'node'
+    static_configs:
+      - targets: ['localhost:9100']
+      </code></pre>
+    </section>
+
+    <section>
+      <h2>📦 What is Loki?</h2>
+      <p>Loki is a log aggregation system designed by Grafana Labs. It is like Prometheus, but for logs. It indexes only metadata, not the full log content, which makes it efficient and cost-effective.</p>
+      <ul>
+        <li>Integrates with Grafana</li>
+        <li>Label-based filtering (not full text search)</li>
+        <li>Push logs using Promtail</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>⚙️ What is Promtail?</h2>
+      <p>Promtail is an agent that ships the contents of local logs to Loki. It is usually deployed to every machine that has applications needed to be monitored.</p>
+    </section>
+
+    <section>
+      <h2>📉 What is Grafana?</h2>
+      <p>Grafana is a multi-platform open-source analytics and interactive visualization web application. It provides charts, graphs, and alerts for the web when connected to supported data sources like Prometheus, Loki, etc.</p>
+      <ul>
+        <li>Beautiful dashboards and panels</li>
+        <li>Alerting and notifications</li>
+        <li>Custom plugins and data source support</li>
+        <li>Fully open-source with enterprise options</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🧪 How They Work Together</h2>
+      <ul>
+        <li>Prometheus → Collects metrics</li>
+        <li>Loki + Promtail → Collects logs</li>
+        <li>Grafana → Visualizes both metrics and logs</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>🚀 Docker Compose Example</h2>
+      <pre><code version="yaml">
+version: "3"
+services:
+  prometheus:
+    image: prom/prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+
+  loki:
+    image: grafana/loki
+    ports:
+      - "3100:3100"
+
+  promtail:
+    image: grafana/promtail
+    volumes:
+      - ./promtail-config.yaml:/etc/promtail/config.yaml
+      - /var/log:/var/log
+      </code></pre>
+    </section>
+  </main>
+</body>
+</html>
