@@ -84,3 +84,16 @@ li {
   margin-bottom: 0.5rem;
 }
 
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00d8ff;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+}
+.btn:hover {
+  background-color: #00b6d4;
+}
+
