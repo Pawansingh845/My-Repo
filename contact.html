@@ -1,37 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Contact - TechZone</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+
+    body{
+      background:#0f172a;
+      color:white;
+      font-family:Arial;
+      margin:0;
+      padding:0;
+    }
+
+    header{
+      text-align:center;
+      padding:30px;
+    }
+
+    nav a{
+      color:#00e5ff;
+      text-decoration:none;
+      font-size:18px;
+    }
+
+    .contact-container{
+      width:90%;
+      max-width:700px;
+      margin:auto;
+      background:#111827;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 0 20px rgba(0,229,255,0.3);
+      margin-top:30px;
+      margin-bottom:50px;
+    }
+
+    .contact-info{
+      text-align:center;
+      margin-bottom:30px;
+    }
+
+    .contact-info h2{
+      color:#00e5ff;
+      margin-bottom:10px;
+    }
+
+    .contact-info p{
+      font-size:18px;
+      margin:8px 0;
+    }
+
+    form{
+      display:flex;
+      flex-direction:column;
+      gap:15px;
+    }
+
+    input,
+    textarea{
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      font-size:16px;
+      outline:none;
+    }
+
+    button{
+      padding:15px;
+      border:none;
+      border-radius:10px;
+      background:#00e5ff;
+      color:black;
+      font-size:18px;
+      font-weight:bold;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      transform:scale(1.03);
+      box-shadow:0 0 15px #00e5ff;
+    }
+
+    footer{
+      text-align:center;
+      padding:20px;
+      color:#cbd5e1;
+    }
+
+  </style>
+
 </head>
+
 <body>
-  <header>
-    <h1>Contact Us</h1>
-    <nav>
-      <a href="index.html">Home</a>
-    </nav>
-  </header>
 
-  <main class="form-container">
-    <form>
-      <label>Name:</label>
-      <input type="text" placeholder="Your Name" required>
+<header>
 
-      <label>Email:</label>
-      <input type="email" placeholder="Your Email" required>
+  <h1>📞 Contact TechZone</h1>
 
-      <label>Message:</label>
-      <textarea rows="5" placeholder="Your message here..." required></textarea>
+  <nav>
+    <a href="index.html">⬅ Back To Home</a>
+  </nav>
 
-      <button type="submit">Send</button>
-    </form>
-  </main>
+</header>
 
-  <footer>
-    <p>We'll get back to you within 24 hours.</p>
-  </footer>
+<div class="contact-container">
+
+  <div class="contact-info">
+
+    <h2>Connect With Me</h2>
+
+    <p>📱 9151625909</p>
+
+    <p>📧 pawan.ardom@gmail.com</p>
+
+  </div>
+
+<form action="https://formsubmit.co/pawan.ardom@gmail.com" method="POST">
+
+    <input type="text"
+           name="name"
+           placeholder="Your Name"
+           required>
+
+    <input type="email"
+           name="email"
+           placeholder="Your Email"
+           required>
+
+    <textarea name="message"
+              rows="6"
+              placeholder="Write your message..."
+              required></textarea>
+
+    <input type="hidden"
+           name="_captcha"
+           value="false">
+
+    <input type="hidden"
+           name="_subject"
+           value="New Message From TechZone Website">
+
+    <button type="submit">
+      🚀 Send Message
+    </button>
+
+</form>
+
+</div>
+
+<footer>
+
+  <p>⚡ TechZone | DevOps Portfolio Website</p>
+
+</footer>
+
 </body>
 </html>
-

@@ -1,61 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>TechZone - DevOps & Cloud</title>
+
   <link rel="stylesheet" href="styles.css" />
+
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #0f2027;
-      color: #ffffff;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0b1120;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* TOP NAME */
+
+    .top-name {
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 24px;
+      font-weight: bold;
+      color: white;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    /* HEADER */
+
     header {
       text-align: center;
-      padding: 2rem 1rem;
-      background: linear-gradient(to right, #FF9933, #ffffff, #138808); /* Tiranga: Orange, White, Green */
+      padding: 4rem 1rem;
+
+      background: linear-gradient(
+        135deg,
+        #ff9933,
+        #ffffff,
+        #138808
+      );
+
       color: black;
+
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
     }
 
+    header h1 {
+      font-size: 60px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    header p {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    /* NAVBAR */
+
     nav {
-      margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
     }
 
     nav a {
-      margin: 0 1rem;
+      text-decoration: none;
       color: black;
+      font-size: 18px;
       font-weight: bold;
-      text-decoration: none;
-    }
-
-    section {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    .btn {
-      display: inline-block;
       padding: 10px 20px;
-      margin-top: 1rem;
-      background-color: #ffffff;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-      border: 2px solid #00d8ff;
+      border-radius: 10px;
+      transition: 0.3s;
     }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.6);
+      transform: scale(1.05);
+    }
+
+    /* BUTTONS */
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+
+    .interview-btn,
+    .pdf-btn {
+
+      padding: 16px 35px;
+      border: none;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .interview-btn {
+      background: linear-gradient(to right,#ff9933,#ffffff,#138808);
+      color: black;
+      box-shadow: 0 0 15px rgba(255,153,51,0.5);
+    }
+
+    .pdf-btn {
+      background: #111827;
+      color: white;
+      border: 2px solid #00d8ff;
+      box-shadow: 0 0 15px rgba(0,216,255,0.4);
+    }
+
+    .interview-btn:hover,
+    .pdf-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    /* CARDS */
 
     .grid {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 1.5rem;
-      padding: 2rem;
+      gap: 2rem;
+      padding: 3rem 2rem;
     }
 
     .card-link {
@@ -64,97 +147,210 @@
     }
 
     .card {
-      background-color: #1c1c2b;
-      border-radius: 12px;
-      padding: 1.5rem;
-      width: 280px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      background: linear-gradient(
+        145deg,
+        #111827,
+        #1f2937
+      );
+
+      border-radius: 18px;
+
+      padding: 2rem;
+
+      width: 300px;
+
+      box-shadow:
+        0 4px 15px rgba(0,0,0,0.4);
+
+      transition: 0.3s ease;
+
+      border: 1px solid rgba(255,255,255,0.1);
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+      transform: translateY(-8px);
+      box-shadow:
+        0 10px 30px rgba(0,216,255,0.3);
     }
+
+    .card h3 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #00d8ff;
+    }
+
+    .card p {
+      color: #d1d5db;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* FOOTER */
 
     footer {
       text-align: center;
-      padding: 1rem;
-      background-color: #121218;
-      color: #888;
+      padding: 1.5rem;
+      background: #111827;
+      color: #9ca3af;
+      margin-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.1);
     }
+
+    /* MOBILE */
+
+    @media(max-width:768px) {
+
+      header h1 {
+        font-size: 40px;
+      }
+
+      .top-name {
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .interview-btn,
+      .pdf-btn {
+        width: 90%;
+      }
+
+      .card {
+        width: 90%;
+      }
+
+    }
+
   </style>
+
 </head>
+
 <body>
+
   <header>
-<div class="top-name">
-    Pawan Singh
-</div>
+
+    <div class="top-name">
+      Pawan Singh
+    </div>
+
     <h1>TechZone 🔧</h1>
-    <p>DevOps | Cloud | Docker | Terraform | CI/CD</p>
+
+    <p>
+      DevOps | Cloud | Docker | Terraform | Kubernetes | CI/CD
+    </p>
+
     <nav>
-      <a href="index.html">Home</a>
-      <a href="contact.html">Contact</a>
+      <a href="index.html">🏠 Home</a>
+      <a href="contact.html">📞 Contact</a>
     </nav>
+
   </header>
 
+  <!-- BUTTONS -->
+
   <section>
-  <div class="button-group">
 
-    <!-- OLD QUESTIONS BUTTON -->
-    <a href="interview.html">
+    <div class="button-group">
+
+      <a href="interview-Que.html">
         <button class="interview-btn">
-            ✨ Interview Q&A
+          ✨ Interview Q&A
         </button>
-    </a>
+      </a>
 
-    <!-- NEW PDF BUTTON -->
-    <a href="assets/DevOps-Interview.pdf" target="_blank">
+      <a href="assets/DevOps-Interview.pdf" target="_blank">
         <button class="pdf-btn">
-            📘 DevOps Master PDF
+          📘 DevOps Master PDF
         </button>
-    </a>
+      </a>
 
-</div>
-  </button>
-</a>
+    </div>
+
   </section>
+
+  <!-- CARDS -->
 
   <main class="grid">
 
     <a href="docker.html" class="card-link">
+
       <div class="card">
+
         <h3>🐳 Docker Zone</h3>
-        <p>Explore Docker concepts, commands, interview questions, and real-world use-cases.</p>
+
+        <p>
+          Explore Docker concepts, commands,
+          interview questions, and real-world
+          production use-cases.
+        </p>
+
       </div>
+
     </a>
 
     <a href="terraform.html" class="card-link">
-  <div class="card">
-    <h3>⚙️ Terraform + Azure</h3>
-    <p>Deploy full infrastructure as code using Terraform with Azure.</p>
-  </div>
-</a>
 
+      <div class="card">
+
+        <h3>⚙️ Terraform + Azure</h3>
+
+        <p>
+          Deploy complete infrastructure
+          using Terraform and Azure
+          with real DevOps workflows.
+        </p>
+
+      </div>
+
+    </a>
 
     <a href="cicd.html" class="card-link">
-  <div class="card">
-    <h3>🚀 CI/CD with Jenkins</h3>
-    <p>Automate deployments, testing, and rollbacks like a pro.</p>
-  </div>
-</a>
+
+      <div class="card">
+
+        <h3>🚀 CI/CD with Jenkins</h3>
+
+        <p>
+          Automate deployments, testing,
+          pipelines and rollbacks
+          like a professional DevOps engineer.
+        </p>
+
+      </div>
+
+    </a>
 
     <a href="monitoring.html" class="card-link">
+
       <div class="card">
-        <h3>📊 Monitoring with Grafana</h3>
-        <p>Visualize logs and metrics using Loki, Prometheus & Grafana.</p>
+
+        <h3>📊 Monitoring Stack</h3>
+
+        <p>
+          Monitor logs and metrics
+          using Grafana, Loki,
+          Prometheus and AlertManager.
+        </p>
+
       </div>
+
     </a>
 
   </main>
 
   <footer>
-    <p>© 2025 TechZone | Built by Pawan Singh</p>
+
+    <p>
+      © 2025 TechZone | Built By Pawan Singh ⚡
+    </p>
+
   </footer>
+
 </body>
+
 </html>
