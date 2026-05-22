@@ -115,3 +115,221 @@ li {
   transform: scale(1.02);
   box-shadow: 0 6px 12px rgba(0,0,0,0.4);
 }
+
+# TechZone Website Upgrade – PDF Interview Portal
+
+## 1. Create Folder Structure
+
+Apne project folder me ye structure banao:
+
+```text
+techzone/
+ ├── index.html
+ ├── style.css
+ ├── script.js
+ ├── assets/
+ │    └── DevOps-Interview.pdf
+```
+
+---
+
+# 2. PDF File Add Karo
+
+Uploaded PDF ka naam rename karo:
+
+```text
+DevOps-Interview.pdf
+```
+
+Aur usko:
+
+```text
+assets/
+```
+
+folder ke andar daal do.
+
+---
+
+# 3. HTML Section Add Karo
+
+`index.html` me existing cards ke niche ye pura section paste karo:
+
+```html
+<!-- PDF Interview Section -->
+<section class="pdf-container">
+
+    <div class="pdf-card">
+        <h1>📘 DevOps Interview Master PDF</h1>
+
+        <p>
+            200 Real-Time DevOps Interview Questions & Answers
+            covering Linux, Docker, Kubernetes, Terraform,
+            Jenkins, AWS, Monitoring, CI/CD & Production Scenarios.
+        </p>
+
+        <div class="pdf-buttons">
+
+            <a href="assets/DevOps-Interview.pdf" target="_blank">
+                <button class="open-btn">
+                    📄 Open PDF
+                </button>
+            </a>
+
+            <a href="assets/DevOps-Interview.pdf" download>
+                <button class="download-btn">
+                    ⬇ Download PDF
+                </button>
+            </a>
+
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Embedded PDF Viewer -->
+<section class="viewer-section">
+
+    <h2>🔥 Read PDF Directly On Website</h2>
+
+    <iframe
+        src="assets/DevOps-Interview.pdf"
+        class="pdf-viewer">
+    </iframe>
+
+</section>
+```
+
+---
+
+# 4. CSS Add Karo
+
+`style.css` ke end me ye pura CSS paste karo:
+
+```css
+/* =========================
+   PDF SECTION
+========================= */
+
+.pdf-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.pdf-card {
+    width: 85%;
+    background: rgba(20, 20, 40, 0.9);
+    border: 2px solid #00e5ff;
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 229, 255, 0.4);
+}
+
+.pdf-card h1 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 40px;
+}
+
+.pdf-card p {
+    color: #d8d8d8;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.pdf-buttons {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.open-btn,
+.download-btn {
+    padding: 16px 35px;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.open-btn {
+    background: #00e5ff;
+    color: black;
+}
+
+.download-btn {
+    background: #ffffff;
+    color: black;
+}
+
+.open-btn:hover,
+.download-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 20px #00e5ff;
+}
+
+/* =========================
+   PDF VIEWER
+========================= */
+
+.viewer-section {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+.viewer-section h2 {
+    color: white;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.pdf-viewer {
+    width: 90%;
+    height: 900px;
+    border-radius: 15px;
+    border: 3px solid #00e5ff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+    background: white;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px) {
+
+    .pdf-card {
+        width: 95%;
+        padding: 25px;
+    }
+
+    .pdf-card h1 {
+        font-size: 28px;
+    }
+
+    .pdf-card p {
+        font-size: 16px;
+    }
+
+    .pdf-viewer {
+        height: 500px;
+    }
+
+    .open-btn,
+    .download-btn {
+        width: 100%;
+    }
+}
+```
