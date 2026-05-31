@@ -384,3 +384,20 @@ footer{
     padding:20px;
   }
 }
+
+.pdf-btn{
+    background: linear-gradient(135deg,#138808,#0f9d58);
+    color:white;
+    border:none;
+    padding:15px 28px;
+    border-radius:12px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.pdf-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 20px rgba(19,136,8,0.5);
+}
