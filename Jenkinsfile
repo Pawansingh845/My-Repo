@@ -3,7 +3,8 @@ pipeline{
     stages {
         stage ('gitcheckout') {
             steps {
-              git 'https://github.com/Pawansingh845/My-Repo'
+                git branch : 'main',
+                  url: 'https://github.com/Pawansingh845/My-Repo'
 
     }
  }
