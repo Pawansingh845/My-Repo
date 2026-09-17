@@ -26,7 +26,7 @@ pipeline{
  }
         stage('sonar scan') {
             steps {
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('Sonar') {
             sh '''
                 sonar-scanner \
                 -Dsonar.projectKey=newtech \
