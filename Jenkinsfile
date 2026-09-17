@@ -27,11 +27,14 @@ pipeline{
         stage('sonar scan') {
             steps {
                 withSonarQubeEnv('Sonar') {
+                withEnv(["PATH+SONAR=${tool 'sonar'}/bin"]) {    
             sh '''
                 sonar-scanner \
                 -Dsonar.projectKey=newtech \
                 -Dsonar.sources=.
             '''
+                }
+           
                 }
             }
         }
