@@ -24,6 +24,18 @@ pipeline{
 
     }
  }
+        stage('sonar scan') {
+            steps {
+                withSonarQubeEnv('SonarQube') {
+            sh '''
+                sonar-scanner \
+                -Dsonar.projectKey=newtech \
+                -Dsonar.sources=.
+            '''
+                }
+            }
+        }
+           
   
         stage ('doker build') {
            steps {
