@@ -41,7 +41,7 @@ pipeline{
     
         stage ('docker run') {
             steps {
-              sh 'docker run -d --name newtech -p ${HOST_PORT}:80 ${IMAGE_NAME}:${IMAGE_TAG}'
+              sh 'docker run -d --name ${IMAGE_TAG} -p ${HOST_PORT}:80 ${IMAGE_NAME}:${IMAGE_TAG}'
         }
     } 
          
